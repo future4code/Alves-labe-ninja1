@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import axios from "axios";
+import styled from "styled-components";
+import {Body, Header, MainHome} from "./components/styled"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  render() {
+    return (
+      <Body>
+        <Header>
+          <h2>LabeNinjas</h2>
+          <div>
+            <button>Home</button>
+            <button>Carrinho</button>
+          </div>
+        </Header>
+        <MainHome>
+          <h1>LabeNinjas</h1>
+          <h3>O talento certo no momento certo</h3>
+          <div>
+            <button>Quero ser um Ninja</button>
+            <button>Contratar um Ninja</button>
+          </div>
+        </MainHome>
+      </Body>
+    );
+  }
 }
-
-export default App;
