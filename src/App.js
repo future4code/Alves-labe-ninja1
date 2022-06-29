@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import {Body, Header, MainHome} from "./components/styled"
+import PageCadastro from "./pages/pageCadastro/PageCadastro"
+import Carrinho from "./components/carrinho/Carrinho"
 
 
 export default class App extends Component {
@@ -10,10 +12,10 @@ export default class App extends Component {
       <Body>
         <Header>
           <h2>LabeNinjas</h2>
-          <div>
+          <nav>
             <button>Home</button>
             <button>Carrinho</button>
-          </div>
+          </nav>
         </Header>
         <MainHome>
           <h1>LabeNinjas</h1>
@@ -23,6 +25,8 @@ export default class App extends Component {
             <button>Contratar um Ninja</button>
           </div>
         </MainHome>
+      
+      
       </Body>
     );
   }
