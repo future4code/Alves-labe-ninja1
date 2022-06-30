@@ -22,20 +22,38 @@ export const Header = styled.header`
     margin-left: 10px;
   }
   div {
-    
-  button {
-    margin-right: 30px;
-  }
+    button {
+      margin-right: 30px;
+    }
   }
 `;
 export const Footer = styled.footer`
   border: 1px solid black;
-  padding: 25px;
+  height: 5%;
   background-color: #74747c;
   display: flex;
   justify-content: space-between;
   flex-shrink: 0;
+  align-items: center;
+  h5 {
+    margin: 30px;
+  }
 `;
+export const RedesSociais = styled.nav`
+  display: flex; 
+  width: auto;
+  flex-wrap: wrap;
+  height: 100px;
+  align-items: center;
+  margin-right: 30px; 
+  img {    
+    margin-left: 20px;
+    max-width: 20px;
+    box-shadow: 1px 1px 1px 1px rgb(194, 164, 224);
+    background: transparent;
+  }
+`;
+
 // Styled Página Home
 export const MainHome = styled.main`
   display: flex;
@@ -62,16 +80,16 @@ export const Section = styled.section`
   background-color: #7c64c2;
   width: 100%;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   flex-shrink: 0;
   div {
     margin-left: 30px;
   }
-  `
-  
-  export const DivTexto = styled.div`
-    border: solid 1px black;
-    margin: 30px;
-    max-width: 40%;
-  
+`;
+
+export const DivTexto = styled.div`
+  border: solid 1px black;
+  margin: 30px;
+  max-width: 40%;
+  padding: 10px;
 `;
