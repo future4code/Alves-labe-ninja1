@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import PageCadastro from "./pages/pageCadastro/PageCadastro";
 import PageCards from "./components/PageCards";
 import PageCarrinho from "./components/PageCarrinho";
+import PageDetail from "./components/PageDetail";
 
 export default class App extends Component {
   state = {
@@ -24,6 +25,8 @@ export default class App extends Component {
         return <PageCards mudarTela={this.mudarTela} />;
       case "carinho":
         return <PageCarrinho mudarTela={this.mudarTela} />;
+      case "detalhes":
+        return <PageDetail mudarTela={this.mudarTela}/>
     }
   };
 
