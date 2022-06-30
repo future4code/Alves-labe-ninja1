@@ -3,7 +3,10 @@ import React, { Component } from 'react'
 export default class PageCards extends Component {
   render() {
     return (
-      <div>PageCards</div>
+      <div>
+        <h2>PageCards</h2>
+        <button onClick={() => this.props.mudarTela("detalhes")}>Ver detalhe</button>
+      </div>
     )
   }
 }
