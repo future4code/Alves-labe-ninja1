@@ -37,9 +37,18 @@ export default class PageCadastro extends React.Component{
                 }
             )
             .then((response) => {
+                alert("Serviço cadastrado com sucesso!")
+                this.setState({
+                    title:"",
+                    description:"",
+                    price:0,
+                    paymentMethods:[],
+                    dueDate:"",
+                })
                 console.log(response)
             })
             .catch((error) => {
+                alert(error.response.data.message)
                 console.log(error)
             })  
     }
@@ -57,21 +66,22 @@ export default class PageCadastro extends React.Component{
     }
 
     newPaymentMethod = (e) => {
-        let methodsArray = [...this.state.paymentMethods, e.target.value]
-        console.log(methodsArray)
-
+        let methodsArray=[]
+        if (e.target.checked) {
+            methodsArray = [...this.state.paymentMethods, e.target.value]
+        } else {
+            methodsArray = this.state.paymentMethods
+            methodsArray.splice(methodsArray.indexOf(e.target.value))
+        }
         this.setState({paymentMethods: methodsArray})
-        console.log(this.state.paymentMethods)
     }
     
     NewDueDate = (e) => {
         this.setState({dueDate: e.target.value})
     }
 
-
-
+    
     render(){
-
 
         return(
         
@@ -84,7 +94,7 @@ export default class PageCadastro extends React.Component{
 
                 <div>
                     <div>Métodos de Pagamento</div>
-                    <input type="checkbox" value="pix" unchecked="true" onChange={this.newPaymentMethod}/>Pix<br/>
+                    <input type="checkbox" value="pix" onChange={this.newPaymentMethod}/>Pix<br/>
                     <input type="checkbox" value="cartao de Credito" onChange={this.newPaymentMethod}/>Cartão de crédito<br/>
                     <input type="checkbox" value="cartao de Debito" onChange={this.newPaymentMethod}/>Cartão de debito<br/>
                     <input type="checkbox" value="boleto" onChange={this.newPaymentMethod}/>Boleto<br/>
