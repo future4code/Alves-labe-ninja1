@@ -8,7 +8,7 @@ import PageCadastro from "./pages/pageCadastro/PageCadastro"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PageCadastro />
+    <App/>
   </React.StrictMode>
 );
 
