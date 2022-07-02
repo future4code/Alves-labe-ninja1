@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import "../App.css";
 
+
 //Estilos Gerais
 export const Body = styled.body`
   margin: 0;
@@ -14,11 +15,12 @@ export const Body = styled.body`
   background-color: #D9D9D9;
 `;
 
+
 //Estilos Header
 export const Header = styled.header`
-  height: 12vh;
+  height: 11vh;
   padding: 0 9vw;
-  background-color: #9087F2;
+  background-color: #a873db;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,7 +95,7 @@ export const Slogan = styled.div`
   text-align: center;
   justify-content: center;
   font-size: 8vh;
-  color: #7c64c2;
+  color: #872fdd;
   font-family: 'GloryMathilda'
 `
 
@@ -122,10 +124,12 @@ export const ButtonHome = styled.button`
   width: 40%;
   height: 10vh;
   border-radius: 10px;
-  background-color: #9087F2;
+  background-color: #872fdd;
+  opacity: 0.6;
 
   :hover {
-    background-color: #7c64c2;
+    opacity: 1;
+    background-color: #872fdd;
     cursor: pointer;
   }
 `;
@@ -134,7 +138,7 @@ export const SecondContainer = styled.section`
   display: flex;
   width: 100%;
   height: 75vh;
-  background-color: #9087F2;
+  background-color: #a873db;
   align-items: center;
   justify-content: space-between;
 
@@ -145,7 +149,6 @@ export const DescriptionImage = styled.img`
   margin-right: auto;
   width: 50%
 `;
-
 
 export const DivTexto = styled.div`
   margin-right: 5em;
@@ -170,28 +173,51 @@ export const Description = styled.div`
 
 
 //Estilos Footer
-export const Footer = styled.footer`
-  height: 5%;
-  background-color: #D9D9D9;
+export const Footer = styled.footer` 
   display: flex;
+  height: 14.5vh;
+  background-color: #D9D9D9;
   justify-content: space-between;
   flex-shrink: 0;
+  justify-content: space-evenly;
   align-items: center;
-  h5 {
-    margin: 30px;
-  }
+
 `;
+
+export const Contato = styled.div`
+  text-align: center;
+  line-height: 4vh;
+  font-size: 2vh;
+  color: #872fdd;
+`
+
+export const Gif = styled.img`
+  height:15vh
+`
+
 export const RedesSociais = styled.nav`
+  bottom: 0;
+  color: #872fdd;
+  font-weight: bold;
+  line-height: 4vh;
   display: flex; 
+  flex-direction: column;
   width: auto;
-  flex-wrap: wrap;
   height: 100px;
-  align-items: center;
-  margin-right: 30px; 
-  img {    
-    margin-left: 20px;
-    max-width: 20px;
-    box-shadow: 1px 1px 1px 1px rgb(194, 164, 224);
+  align-items: flex-end;
+  margin-top: 1em;
+  img {  
+    opacity: 0.6;  
+    margin: 0.5em;
+    max-width: 2.5vw;
     background: transparent;
-  }
-`;
+    :hover{
+      opacity: 0.9;  
+    }
+  };
+`
+
+export const Icons = styled.div`
+  width:100%;
+  text-align: center
+`
