@@ -18,7 +18,7 @@ export const Body = styled.body`
 
 //Estilos Header
 export const Header = styled.header`
-  height: 11vh;
+  height: 12vh;
   padding: 0 9vw;
   background-color: #a873db;
   display: flex;
