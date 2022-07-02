@@ -79,68 +79,70 @@ export default class PageCadastro extends React.Component {
 
   render() {
     return (
-      <FormContainer>
-        <h1>Seja um ninja</h1>
-        <input
-          placeholder="Titulo"
-          value={this.state.title}
-          onChange={this.newTitle}
-        />
-        <input
-          placeholder="Descrição"
-          value={this.state.description}
-          onChange={this.newDescription}
-        />
-        <input
-          placeholder="Preço"
-          value={this.state.price}
-          onChange={this.newPrice}
-        />
+      <div>
+        <FormContainer>
+          <h1>Seja um ninja</h1>
+          <input
+            placeholder="Titulo"
+            value={this.state.title}
+            onChange={this.newTitle}
+          />
+          <input
+            placeholder="Descrição"
+            value={this.state.description}
+            onChange={this.newDescription}
+          />
+          <input
+            placeholder="Preço"
+            value={this.state.price}
+            onChange={this.newPrice}
+          />
 
-        <div>
-          <div>Métodos de Pagamento</div>
-          <input type="checkbox" value="pix" onChange={this.newPaymentMethod} />
-          Pix
-          <br />
-          <input
-            type="checkbox"
-            value="cartao de Credito"
-            onChange={this.newPaymentMethod}
-          />
-          Cartão de crédito
-          <br />
-          <input
-            type="checkbox"
-            value="cartao de Debito"
-            onChange={this.newPaymentMethod}
-          />
-          Cartão de debito
-          <br />
-          <input
-            type="checkbox"
-            value="boleto"
-            onChange={this.newPaymentMethod}
-          />
-          Boleto
-          <br />
-          <input
-            type="checkbox"
-            value="paypal"
-            onChange={this.newPaymentMethod}
-          />
-          Paypal
-          <br />
-        </div>
+          <div>
+            <div>Métodos de Pagamento</div>
+            <input type="checkbox" value="pix" onChange={this.newPaymentMethod} />
+            Pix
+            <br />
+            <input
+              type="checkbox"
+              value="cartao de Credito"
+              onChange={this.newPaymentMethod}
+            />
+            Cartão de crédito
+            <br />
+            <input
+              type="checkbox"
+              value="cartao de Debito"
+              onChange={this.newPaymentMethod}
+            />
+            Cartão de debito
+            <br />
+            <input
+              type="checkbox"
+              value="boleto"
+              onChange={this.newPaymentMethod}
+            />
+            Boleto
+            <br />
+            <input
+              type="checkbox"
+              value="paypal"
+              onChange={this.newPaymentMethod}
+            />
+            Paypal
+            <br />
+          </div>
 
-        <input
-          placeholder="Prazo do Serviço"
-          type="date"
-          value={this.state.dueDate}
-          onChange={this.NewDueDate}
-        />
-        <button onClick={this.createJob}>Cadastrar Serviço</button>
-        
-      </FormContainer>
+          <input
+            placeholder="Prazo do Serviço"
+            type="date"
+            value={this.state.dueDate}
+            onChange={this.NewDueDate}
+          />
+          <button onClick={this.createJob}>Cadastrar Serviço</button>
+          
+        </FormContainer>
+      </div>
     );
   }
 }
