@@ -14,24 +14,34 @@ import Gmail from "./components/img/Gmail.png"
 
 export default class App extends Component {
   state = {
-    telaAtual: "Home",
+    currentScreen: "Home",
+    clickedCharacterId: ""
   };
-  mudarTela = (proximaTela) => {
-    this.setState({ telaAtual: proximaTela });
+  changeScreen = (nextScreen) => {
+    this.setState({ currentScreen: nextScreen });
   };
-
+goToDetailPage = (id) => {
+  this.setState({currentScreen: "detalhes", clickedCharacterId: id})  
+}
+goToPageCards = () => {
+  this.setState({currentScreen: "card", clickedCharacterId: ""})  
+}
   visualisarTela = () => {
-    switch (this.state.telaAtual) {
+    switch (this.state.currentScreen) {
       case "Home":
-        return <Home mudarTela={this.mudarTela} />;
+        return <Home changeScreen={this.changeScreen} />;
       case "cadastro":
-        return <PageCadastro mudarTela={this.mudarTela} />;
+        return <PageCadastro changeScreen={this.changeScreen} />;
       case "card":
-        return <PageCards mudarTela={this.mudarTela} />;
+        return <PageCards 
+        goToDetailPage={this.goToDetailPage}
+        changeScreen={this.changeScreen}/>;
       case "carinho":
-        return <PageCarrinho mudarTela={this.mudarTela} />;
+        return <PageCarrinho changeScreen={this.changeScreen} />;
       case "detalhes":
-        return <PageDetail mudarTela={this.mudarTela}/>
+        return <PageDetail 
+        clickedCharacterId={this.state.clickedCharacterId}
+        goToPageCards={this.goToPageCards}/>
     }
   };
 
@@ -41,8 +51,8 @@ export default class App extends Component {
         <Header>
           <h2>LabeNinjas</h2>
           <div>
-            <Button onClick={() => this.mudarTela("Home")}>Home</Button>
-            <Button onClick={() => this.mudarTela("carinho")}>Carrinho</Button>
+            <Button onClick={() => this.changeScreen("Home")}>Home</Button>
+            <Button onClick={() => this.changeScreen("carinho")}>Carrinho</Button>
           </div>
         </Header>
         {this.visualisarTela()}
