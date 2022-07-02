@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import axios from "axios";
 import React from "react";
 
@@ -50,17 +50,4 @@ export default class PageDetail extends React.Component {
         )
     }
 }
-=======
-import React, { Component } from "react";
 
-export default class PageDetail extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Detalhe do Serviço</h2>
-        <button onClick={() =>this.props.goToPageCards("card")}>Retornar a lista de serviço</button>
-      </div>
-    );
-  }
-}
->>>>>>> b82742092e31e86e31fb3c3536f1e6de06e8ff85
