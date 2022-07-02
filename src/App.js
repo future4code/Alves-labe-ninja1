@@ -22,12 +22,12 @@ export default class App extends Component {
   changeScreen = (nextScreen) => {
     this.setState({ currentScreen: nextScreen });
   };
-  goToDetailPage = (id) => {
-    this.setState({ currentScreen: "detalhes", clickedCharacterId: id })
-  }
-  goToPageCards = () => {
-    this.setState({ currentScreen: "card", clickedCharacterId: "" })
-  }
+goToDetailPage = (id) => {
+  this.setState({currentScreen: "detalhes", clickedCharacterId: id})  
+}
+goToPageCards = () => {
+  this.setState({currentScreen: "card", clickedCharacterId: ""})  
+}
   visualisarTela = () => {
     switch (this.state.currentScreen) {
       case "Home":
@@ -35,21 +35,21 @@ export default class App extends Component {
       case "cadastro":
         return <PageCadastro changeScreen={this.changeScreen} />;
       case "card":
-        return <PageCards
-          goToDetailPage={this.goToDetailPage}
-          changeScreen={this.changeScreen}
+        return <PageCards 
+        goToDetailPage={this.goToDetailPage}
+        changeScreen={this.changeScreen}
         />;
       case "carrinho":
-        return <PageCarrinho changeScreen={this.changeScreen}
-          valorTotal={this.state.valorTotal}
-          carrinho={this.state.carrinho}
-          removerItem={this.removerItemDoCarrinho}
-
+        return <PageCarrinho changeScreen={this.changeScreen} 
+         valorTotal={this.state.valorTotal}
+         carrinho={this.state.carrinho}
+         removerItem={this.removerItemDoCarrinho}
+         
         />;
       case "detalhes":
-        return <PageDetail
-          clickedCharacterId={this.state.clickedCharacterId}
-          goToPageCards={this.goToPageCards} />
+        return <PageDetail 
+        clickedCharacterId={this.state.clickedCharacterId}
+        goToPageCards={this.goToPageCards}/>
     }
   };
 
@@ -58,7 +58,7 @@ export default class App extends Component {
     const produtoNoCarrinho = this.state.carrinho.filter((job) => {
       if (job.id === produto.id) {
         return job;
-      } else {
+      }else{
         return false
       }
     });
@@ -85,12 +85,12 @@ export default class App extends Component {
     this.adicionarValorTotal(produto.price);
   };
 
-  removerItemDoCarrinho = (itemParaRemover) => {
+   removerItemDoCarrinho = (itemParaRemover) => {
     if (itemParaRemover.quantidade === 1) {
       const novoCarrinho = this.state.carrinho.filter((item) => {
         if (item.id !== itemParaRemover.id) {
           return item;
-        } else {
+        }else{
           return false
         }
       });
@@ -126,23 +126,23 @@ export default class App extends Component {
           <h5>Tel: (+55)99-99999-9999</h5>
           <h5>Siga nos nas redes sociais</h5>
           <RedesSociais >
-            <a href="https://gmail.google.com" target="_blank">
-              <img src={Gmail} alt="Link Gmail" />
-            </a>
-            <a href="https://web.whatsapp.com/send?phone=00000000000" target="_blank">
-              <img src={whatsapp} alt="Link whatsapp" />
-            </a>
-            <a href="https://www.facebook.com/" target="_blank">
-              <img src={facebook} alt="Link Facebook" />
-            </a>
-            <a href="https://twitter.com/login?lang=pt" target="_blank">
-              <img src={twitter} alt="Link Twitter" />
-              <a href="https://www.instagram.com/" target="_blank">
-                <img src={instagran} alt="Link Instagram" />
-              </a>
-            </a>
-          </RedesSociais>
-        </Footer>
+                <a href="https://gmail.google.com" target="_blank">
+                    <img src={Gmail} alt="Link Gmail"/>
+                </a>
+                <a href="https://web.whatsapp.com/send?phone=00000000000" target="_blank">
+                    <img src={whatsapp} alt="Link whatsapp"/>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src={facebook} alt="Link Facebook"/>
+                </a>
+                <a href="https://twitter.com/login?lang=pt" target="_blank">
+                    <img src={twitter} alt="Link Twitter"/>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src={instagran} alt="Link Instagram"/>
+                </a>
+                </a>
+            </RedesSociais>
+          </Footer>
       </Body>
 
     );

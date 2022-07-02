@@ -1,24 +1,30 @@
 // import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
+import "../App.css";
 
+
+//Estilos Gerais
 export const Body = styled.body`
-  margin: 0px;
-  padding: 0px;
-  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* background-color: #181a1b; */
+  background-color: #D9D9D9;
 `;
+
+
+//Estilos Header
 export const Header = styled.header`
-  border: 1px solid black;
-  padding: 0 12px;
-  background-color: #7c64c2;
+  height: 11vh;
+  padding: 0 9vw;
+  background-color: #a873db;
   display: flex;
   justify-content: space-between;
   align-items: center;
   h2 {
-    font-family: "Times New Roman", Times, serif;
     margin-left: 10px;
   }
   div {
@@ -27,69 +33,191 @@ export const Header = styled.header`
     }
   }
 `;
-export const Footer = styled.footer`
-  border: 1px solid black;
-  height: 5%;
-  background-color: #74747c;
+
+export const ButtonsHeader = styled.div`
+  margin-right: 3vw;
+`
+
+export const Button = styled.button`
+  border: none;
+  border-radius: 3px;
+  background-color: #D9D9D9;
+  height: 3vh;
+`;
+
+export const Logo = styled.img`
+  display: inline-block;
+  margin-left: 2vw;
+  height: 12vh;
+`
+
+export const PageName = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-shrink: 0;
   align-items: center;
-  h5 {
-    margin: 30px;
-  }
-`;
-export const RedesSociais = styled.nav`
-  display: flex; 
-  width: auto;
-  flex-wrap: wrap;
-  height: 100px;
-  align-items: center;
-  margin-right: 30px; 
-  img {    
-    margin-left: 20px;
-    max-width: 20px;
-    box-shadow: 1px 1px 1px 1px rgb(194, 164, 224);
-    background: transparent;
-  }
-`;
+  text-align: center;
+  color: #D9D9D9;
+  line-height: 90%;
+  font-size: 5.2vh;
+  font-family: 'GloryMathilda'
+`
+
 
 // Styled Página Home
 export const MainHome = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  margin-top: 20px;
+  width: 100%;
   font-family: "Times New Roman", Times, serif;
   flex: 1 0 auto;
 `;
-export const DivButton = styled.div`
-  flex: 1 0 auto;
-  margin-bottom: 20px;
+
+export const FirstContainer = styled.section`
+  display: grid;
+  width: 100%;
+  align-items:center;
+  justify-items: end;
+  grid-template-columns: 1.3fr 1fr;
+`
+
+
+export const HomeImg = styled.img`
+  margin-left: auto;
+  margin-right: 16vw;
+`
+
+export const Slogan = styled.div`
   display: flex;
-  gap: 30px;
-`;
-export const Button = styled.button`
-  border-radius: 25px;
-  height: 5vh;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom:5vh;
+  text-align: center;
+  justify-content: center;
+  font-size: 8vh;
+  color: #872fdd;
+  font-family: 'GloryMathilda'
+`
+
+export const ChoicesContainer = styled.div`
+  display: grid;
+  grid-template-rows: 1.5fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width:80%;
 `;
 
-export const Section = styled.section`
+export const DivButton = styled.div`
   display: flex;
-  background-color: #7c64c2;
+  height: 100%;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-  div {
-    margin-left: 30px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 30px;
+`;
+
+export const ButtonHome = styled.button`
+  border:none;
+  color: #D9D9D9;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 3.7vh;
+  width: 40%;
+  height: 10vh;
+  border-radius: 10px;
+  background-color: #872fdd;
+  opacity: 0.6;
+
+  :hover {
+    opacity: 1;
+    background-color: #872fdd;
+    cursor: pointer;
   }
 `;
 
-export const DivTexto = styled.div`
-  border: solid 1px black;
-  margin: 30px;
-  max-width: 40%;
-  padding: 10px;
+export const SecondContainer = styled.section`
+  display: flex;
+  width: 100%;
+  height: 75vh;
+  background-color: #a873db;
+  align-items: center;
+  justify-content: space-between;
+
 `;
+
+export const DescriptionImage = styled.img`
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+`;
+
+export const DivTexto = styled.div`
+  margin-right: 5em;
+  max-height: 100vh;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+`;
+
+export const Title = styled.div`
+  font-size: 7vh;
+  
+  color: #D9D9D9;
+
+`
+
+export const Description = styled.div`
+  margin-top: 1em;
+  font-size: 3vh; 
+  
+  color: #D9D9D9;
+
+`
+
+
+//Estilos Footer
+export const Footer = styled.footer` 
+  display: flex;
+  height: 14.5vh;
+  background-color: #D9D9D9;
+  justify-content: space-between;
+  flex-shrink: 0;
+  justify-content: space-evenly;
+  align-items: center;
+
+`;
+
+export const Contato = styled.div`
+  text-align: center;
+  line-height: 4vh;
+  font-size: 2vh;
+  color: #872fdd;
+`
+
+export const Gif = styled.img`
+  height:15vh
+`
+
+export const RedesSociais = styled.nav`
+  bottom: 0;
+  color: #872fdd;
+  font-weight: bold;
+  line-height: 4vh;
+  display: flex; 
+  flex-direction: column;
+  width: auto;
+  height: 100px;
+  align-items: flex-end;
+  margin-top: 1em;
+  img {  
+    opacity: 0.6;  
+    margin: 0.5em;
+    max-width: 2.5vw;
+    background: transparent;
+    :hover{
+      opacity: 0.9;  
+    }
+  };
+`
+
+export const Icons = styled.div`
+  width:100%;
+  text-align: center
+`
