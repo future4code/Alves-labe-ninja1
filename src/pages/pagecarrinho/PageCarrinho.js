@@ -21,7 +21,7 @@ export default class PageCarrinho extends Component {
                     key={item.id}>
                     quantidade={item.price}
                     nome={item.title}
-                    onClick={() => this.props.removerItemCarrinho("removeu")}
+                    onClick={() => this.props.removerItemDoCarrinho(item.id)}
                 </ItemCarrinho>
 
             })
