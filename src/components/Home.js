@@ -11,10 +11,10 @@ export default class Home extends Component {
           <ChoicesContainer>
               <Slogan>O TALENTO CERTO<br/>NO MOMENTO CERTO</Slogan>
               <DivButton>
-                <ButtonHome onClick={() => this.props.mudarTela("cadastro")}>
+                <ButtonHome onClick={() => this.props.changeScreen("cadastro")}>
                   Quero ser um ninja
                 </ButtonHome>
-                <ButtonHome onClick={() => this.props.mudarTela("card")}>
+                <ButtonHome onClick={() => this.props.changeScreen("card")}>
                   Contratar um ninja
                 </ButtonHome>
               </DivButton>
