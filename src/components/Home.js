@@ -7,10 +7,10 @@ export default class Home extends Component {
       <MainHome>
         <h3>O talento certo no momento certo</h3>
         <DivButton>
-          <Button onClick={() => this.props.mudarTela("cadastro")}>
+          <Button onClick={() => this.props.changeScreen("cadastro")}>
             Quero ser um Ninja
           </Button>
-          <Button onClick={() => this.props.mudarTela("card")}>
+          <Button onClick={() => this.props.changeScreen("card")}>
             Contratar um Ninja
           </Button>
         </DivButton>

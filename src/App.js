@@ -15,35 +15,34 @@ import Gmail from "./components/img/Gmail.png"
 
 export default class App extends Component {
   state = {
-    telaAtual: "Home",
-    carrinho: ["produto"], // valores teste de carrinho e valortotal
-    valorTotal: 10
+    currentScreen: "Home",
+    clickedCharacterId: ""
   };
-
-
-  mudarTela = (proximaTela) => {
-    this.setState({ telaAtual: proximaTela });
+  changeScreen = (nextScreen) => {
+    this.setState({ currentScreen: nextScreen });
   };
-
-
+goToDetailPage = (id) => {
+  this.setState({currentScreen: "detalhes", clickedCharacterId: id})  
+}
+goToPageCards = () => {
+  this.setState({currentScreen: "card", clickedCharacterId: ""})  
+}
   visualisarTela = () => {
-    switch (this.state.telaAtual) {
+    switch (this.state.currentScreen) {
       case "Home":
-        return <Home mudarTela={this.mudarTela} />;
+        return <Home changeScreen={this.changeScreen} />;
       case "cadastro":
-        return <PageCadastro mudarTela={this.mudarTela} />;
+        return <PageCadastro changeScreen={this.changeScreen} />;
       case "card":
-        return <PageCards mudarTela={this.mudarTela} />;
-      case "carrinho":
-        return <PageCarrinho mudarTela={this.mudarTela}
-          valorTotal={this.state.valorTotal}
-          carrinho={this.state.carrinho}
-          removerItem={this.removerItemCarrinho}
-        />;
+        return <PageCards 
+        goToDetailPage={this.goToDetailPage}
+        changeScreen={this.changeScreen}/>;
+      case "carinho":
+        return <PageCarrinho changeScreen={this.changeScreen} />;
       case "detalhes":
-        return <PageDetail mudarTela={this.mudarTela} />
-      default:
-        return <Home mudarTela={this.mudarTela} />;
+        return <PageDetail 
+        clickedCharacterId={this.state.clickedCharacterId}
+        goToPageCards={this.goToPageCards}/>
     }
   };
 
@@ -65,8 +64,8 @@ export default class App extends Component {
         <Header>
           <h2>LabeNinjas</h2>
           <div>
-            <Button onClick={() => this.mudarTela("Home")}>Home</Button>
-            <Button onClick={() => this.mudarTela("carrinho")}>Carrinho</Button>
+            <Button onClick={() => this.changeScreen("Home")}>Home</Button>
+            <Button onClick={() => this.changeScreen("carinho")}>Carrinho</Button>
           </div>
         </Header>
         {this.visualisarTela()}
