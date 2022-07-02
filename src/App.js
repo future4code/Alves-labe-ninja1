@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-//import axios from "axios";
-//import { Body, Header, Footer, Button, RedesSociais } from "./components/styled";
+import axios from "axios";
+import { Body, Header, ButtonsHeader, Footer, Button, RedesSociais, Logo, PageName} from "./components/styled";
 import Home from "./components/Home";
 import PageCadastro from "./pages/pageCadastro/PageCadastro";
 import PageCards from "./components/PageCards";
@@ -11,6 +11,8 @@ import instagran from "./components/img/instagran.jpg"
 import twitter from "./components/img/twitter.jpg"
 import whatsapp from "./components/img/whatsapp.jpg"
 import Gmail from "./components/img/Gmail.png"
+import ninjaLogo from "./components/img/ninjaLogo.png"
+import HomeLogo from "./components/img/home.png"
 
 
 export default class App extends Component {
@@ -62,11 +64,11 @@ goToPageCards = () => {
     return (
       <Body>
         <Header>
-          <h2>LabeNinjas</h2>
-          <div>
-            <Button onClick={() => this.changeScreen("Home")}>Home</Button>
-            <Button onClick={() => this.changeScreen("carinho")}>Carrinho</Button>
-          </div>
+          <PageName><Logo src={ninjaLogo}></Logo>LABE<br/>NINJAS</PageName>
+          <ButtonsHeader>
+            <Button onClick={() => this.mudarTela("Home")}>HOME</Button>
+            <Button onClick={() => this.mudarTela("carrinho")}>CARRINHO</Button>
+          </ButtonsHeader>
         </Header>
         {this.visualisarTela()}
         <Footer>

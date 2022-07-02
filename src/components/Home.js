@@ -1,36 +1,41 @@
 import React, { Component } from "react";
-import { MainHome, Section, DivButton, Button, DivTexto } from "./styled";
+import { MainHome, SecondContainer, DivButton, DivTexto, FirstContainer, ChoicesContainer, HomeImg, ButtonHome, Slogan, DescriptionImage, Title, Description} from "./styled";
+import Worker from "../components/img/workergirl.png"
+import Workman from "../components/img/workmen.png"
 
 export default class Home extends Component {
   render() {
     return (
       <MainHome>
-        <h3>O talento certo no momento certo</h3>
-        <DivButton>
-          <Button onClick={() => this.props.changeScreen("cadastro")}>
-            Quero ser um Ninja
-          </Button>
-          <Button onClick={() => this.props.changeScreen("card")}>
-            Contratar um Ninja
-          </Button>
-        </DivButton>
-        <Section>
-          <div>
-            <h1>LabeNinjas</h1>
-            <p>imagem</p>
-          </div>
+        <FirstContainer>
+          <ChoicesContainer>
+              <Slogan>O TALENTO CERTO<br/>NO MOMENTO CERTO</Slogan>
+              <DivButton>
+                <ButtonHome onClick={() => this.props.mudarTela("cadastro")}>
+                  Quero ser um ninja
+                </ButtonHome>
+                <ButtonHome onClick={() => this.props.mudarTela("card")}>
+                  Contratar um ninja
+                </ButtonHome>
+              </DivButton>
+          </ChoicesContainer>
+          <HomeImg src={Worker}></HomeImg>
+        </FirstContainer>
+
+        <SecondContainer>
+          <DescriptionImage src={Workman}></DescriptionImage>
           <DivTexto>
-            <h5>Quem somos</h5>
-            <p>
+            <Title>Quem somos nós?</Title>
+            <Description>
               O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de
               texto da indústria tipográfica e de impressos, e vem sendo
-              utilizado desde o século XVI, quando um impressor desconhecido
-              pegou uma bandeja de tipos e os embaralhou para fazer um livro de
-              modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos,
-              como
-            </p>
+              utilizado desde o século XVI.Lorem Ipsum é simplesmente uma simulação de
+              texto da indústria tipográfica e de impressos, e vem sendo
+              utilizado desde o século XVI.
+            </Description>
           </DivTexto>
-        </Section>
+
+        </SecondContainer>
       </MainHome>
     );
   }
