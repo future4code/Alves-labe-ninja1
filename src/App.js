@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Body, Header, Footer, Button, RedesSociais } from "./components/styled";
+//import axios from "axios";
+//import { Body, Header, Footer, Button, RedesSociais } from "./components/styled";
 import Home from "./components/Home";
 import PageCadastro from "./pages/pageCadastro/PageCadastro";
 import PageCards from "./components/PageCards";
-import PageCarrinho from "./components/PageCarrinho";
+import PageCarrinho from "./pages/pagecarrinho/PageCarrinho";
 import PageDetail from "./components/PageDetail";
 import facebook from "./components/img/facebook.jpg"
 import instagran from "./components/img/instagran.jpg"
 import twitter from "./components/img/twitter.jpg"
 import whatsapp from "./components/img/whatsapp.jpg"
 import Gmail from "./components/img/Gmail.png"
+
 
 export default class App extends Component {
   state = {
@@ -45,6 +46,18 @@ goToPageCards = () => {
     }
   };
 
+  // vai ser colocado no botão no card para adiciona job
+  adicionarCarrinho = (item) => {
+    const novoItem = { ...item }
+    const novoCarrinho = [...this.state.carrinho, novoItem]
+    this.setState({ carrinho: novoCarrinho })
+    alert("Serviço adicionado com sucesso!")
+  }
+
+  removerItemCarrinho = (item) => {
+    console.log(item)
+  }
+
   render() {
     return (
       <Body>
@@ -78,6 +91,8 @@ goToPageCards = () => {
             </RedesSociais>
           </Footer>
       </Body>
+
     );
   }
 }
+
