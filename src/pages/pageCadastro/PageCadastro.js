@@ -9,9 +9,10 @@ const CadastroImage = styled.img`
 `
 const ContainerCadastro = styled.div`
   display: grid;
+  align-items:center;
   width: 100%;
   background-color:#cccccc;
-  height:72vh;
+  height:100%;
   grid-template-columns: 1fr 1fr;
 `
 const TitleCadastro = styled.div`
@@ -19,6 +20,9 @@ const TitleCadastro = styled.div`
 `
 const FormContainer = styled.div`
   display: flex;
+  width: 100%;
+  height: 100%;
+  justify-items: start;
   align-items: center;
 `;
 
@@ -27,9 +31,9 @@ const Form = styled.div`
   color: white;
   height: 82%;
   background-color: #a6a6a6;
-  width: 70%;
+  width: 50%;
   max-width: 60%;
-  padding: 1vw;
+  padding: 2vw;
 
 `;
 
@@ -68,12 +72,16 @@ const InputDescricao = styled.textarea`
   border-radius: 5px;
   border: none;
   outline: none;
-  height: 15vh;
+  height: 12vh;
+`
+const Methods = styled.div`
+  margin-bottom: 0.8em;
 `
 
 const PaymentMethod = styled.span`
-  padding-right: 1.2vw;
+  padding-right: 2.5vw;
 `
+
 
 
 export default class PageCadastro extends React.Component {
@@ -176,7 +184,7 @@ export default class PageCadastro extends React.Component {
               />
             </Campo>
             <Campo>
-              <div>
+              <Methods>
                 <div>MÉTODOS DE PAGAMENTO</div>
                 <Input
                   type="checkbox" 
@@ -189,14 +197,14 @@ export default class PageCadastro extends React.Component {
                   value="Cartao de Crédito, "
                   onChange={this.newPaymentMethod}
                 />
-                <PaymentMethod>Cartão de crédito</PaymentMethod>
+                <PaymentMethod>Crédito</PaymentMethod>
                 
                 <Input
                   type="checkbox"
                   value="Cartao de Débito, "
                   onChange={this.newPaymentMethod}
                 />
-                <PaymentMethod>Cartão de debito</PaymentMethod>
+                <PaymentMethod>Débito</PaymentMethod>
               
                 <Input
                   type="checkbox"
@@ -205,7 +213,7 @@ export default class PageCadastro extends React.Component {
                 />
                 <PaymentMethod>Boleto</PaymentMethod>
                 
-              </div>
+              </Methods>
             </Campo>
 
             <Campo>
