@@ -19,27 +19,19 @@ export const Body = styled.body`
 //Estilos Header
 export const Header = styled.header`
   height: 13vh;
-  padding: 0 9vw;
   background-color: #a873db;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h2 {
-    margin-left: 10px;
-  }
-  div {
-    button {
-      margin-right: 30px;
-    }
-  }
 `;
 
 export const ButtonsHeader = styled.div`
   display: flex;
+  height:100%; 
+  align-items: center;
   filter: drop-shadow(1px 1px 1px #6F7378);
   gap: 1.5vw;
-
-  margin-right: 14vw;
+  margin-right: 20vw;
 
 `
 
@@ -70,12 +62,12 @@ export const CartButton = styled.img`
 
 export const Logo = styled.img`
   display: inline-block;
-  margin-left: 2vw;
   height: 13vh;
 `
 
 export const PageName = styled.div`
   display: flex;
+  margin-left: 14vw;
   align-items: center;
   text-align: center;
   color: #D9D9D9;
@@ -109,10 +101,9 @@ export const FirstContainer = styled.section`
   grid-template-columns: 1.3fr 1fr;
 `
 
-
 export const HomeImg = styled.img`
   margin-left: auto;
-  margin-right: 16vw;
+  margin-right: 15vw;
 `
 
 export const Slogan = styled.div`
@@ -205,8 +196,8 @@ export const Description = styled.div`
 export const Footer = styled.footer` 
   display: flex;
   height: 14.5vh;
+  bottom:0;
   background-color: #D9D9D9;
-  justify-content: space-between;
   flex-shrink: 0;
   justify-content: space-evenly;
   align-items: center;
