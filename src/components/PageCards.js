@@ -21,7 +21,6 @@ export const Filter = styled.div`
   display: flex;
   justify-content: space-between;
   min-width: 98%;
-  
 `;
 export const Ordenação = styled.div`
   display: flex;
@@ -39,6 +38,10 @@ export const CardJob = styled.div`
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  border-radius: 20px;
+  background: #a873db;
+  color: white;
+  border: none;
 `;
 export const DivCard = styled.div`
   display: flex;
@@ -46,34 +49,31 @@ export const DivCard = styled.div`
   justify-items: center;
 `;
 
+export const InputDeBusca = styled.input`
+    color: white;
+    border-radius: 10px;
+    border: none;
+   
+`
+
+export const BotaoCard =styled.button`
+border-radius: 10px;
+border: none;
+background: #8000807a;
+color: white;
+
+&:hover{
+  cursor: pointer;
+}
+`
+
 export default class PageCards extends Component {
   state = {
-    JobList: [],
     query: "",
     minPrice: "",
     maxPrice: "",
     sortOrder: "name",
     order: 1,
-  };
-
-  componentDidMount() {
-    this.getJobs();
-  }
-
-  getJobs = () => {
-    const url = "https://labeninjas.herokuapp.com/jobs";
-    axios
-      .get(url, {
-        headers: {
-          Authorization: "a28a3dd0-e7e1-4736-b026-6cd90542742c",
-        },
-      })
-      .then((res) => {
-        this.setState({ JobList: res.data.jobs });
-      })
-      .catch((err) => {
-        alert("ocorreu um problema, tente novamente!");
-      });
   };
 
   updateQuery = (event) => {
@@ -93,9 +93,10 @@ export default class PageCards extends Component {
   };
 
   render() {
-    const jobsList = this.state.JobList.filter((job) => {
-      return job.title.toLowerCase().includes(this.state.query.toLowerCase());
-    })
+    const jobsList = this.props.jobList
+      .filter((job) => {
+        return job.title.toLowerCase().includes(this.state.query.toLowerCase());
+      })
       .filter((job) => {
         return this.state.minPrice === "" || job.price >= this.state.minPrice;
       })
@@ -123,33 +124,35 @@ export default class PageCards extends Component {
           <CardJob key={job.id}>
             <h3>{job.title}</h3>
             <p>
-              <b>Preço: </b>R${job.price}
+              <b>Preço: </b>R${job.price.toFixed(2).replace(".", ",")}
             </p>
             <p>{job.dueDate.split("T")[0]}</p>
-            <button onClick={()=> this.props.adicionarProdutoNoCarrinho(job.id)}>Adicionar ao carrinho</button>
-            <button onClick={() => this.props.goToDetailPage(job.id)}>Ver detalhes</button>
-            <button onCanPlay={()=> this.props.changeScreen("detalhes")}>Ir para carrinho</button>
+            <button onClick={() => this.props.adicionarProdutoNoCarrinho(job)}>
+              Adicionar ao carrinho
+            </button>
+            <button onClick={() => this.props.goToDetailPage(job.id)}>
+              Ver detalhes
+            </button>
           </CardJob>
         );
       });
-
     return (
       <MainCard>
         <div>
           <Filter>
-            <input
+            < InputDeBusca
               type="number"
               placeholder="Preço Mínimo"
               value={this.state.minPrice}
               onChange={this.updateMinPrice}
             />
-            <input
+            < InputDeBusca
               type="number"
               placeholder="Preço Máximo"
               value={this.state.maxPrice}
               onChange={this.updateMaxPrice}
             />
-            <input
+            < InputDeBusca
               placeholder="Busca por Título ou descrição"
               value={this.state.query}
               onChange={this.updateQuery}
@@ -161,7 +164,7 @@ export default class PageCards extends Component {
                 value={this.state.sortOrder}
                 onChange={this.updateSortOrdear}
               >
-                <option value="name">Nome</option>
+                <option value="name">Título</option>
                 <option value="price">Preço</option>
                 <option value="dueDate">Prazo</option>
               </select>
