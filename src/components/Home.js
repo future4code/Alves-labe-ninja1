@@ -34,9 +34,9 @@ export default class Home extends Component {
               utilizado desde o século XVI.
             </Description>
           </DivTexto>
-
         </SecondContainer>
       </MainHome>
+      
     );
   }
 }

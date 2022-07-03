@@ -112,7 +112,7 @@ export default class PageCadastro extends React.Component {
             <br />
             <input
               type="checkbox"
-              value="Cartao de Debito, "
+              value="Cartao de Debito,"
               onChange={this.newPaymentMethod}
             />
             Cartão de debito
@@ -126,7 +126,7 @@ export default class PageCadastro extends React.Component {
             <br />
             <input
               type="checkbox"
-              value="Paypal, "
+              value="paypal, "
               onChange={this.newPaymentMethod}
             />
             Paypal
