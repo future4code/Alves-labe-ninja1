@@ -100,33 +100,33 @@ export default class PageCadastro extends React.Component {
 
           <div>
             <div>Métodos de Pagamento</div>
-            <input type="checkbox" value="pix" onChange={this.newPaymentMethod} />
+            <input type="checkbox" value="Pix, " onChange={this.newPaymentMethod} />
             Pix
             <br />
             <input
               type="checkbox"
-              value="cartao de Credito"
+              value="Cartao de Credito, "
               onChange={this.newPaymentMethod}
             />
             Cartão de crédito
             <br />
             <input
               type="checkbox"
-              value="cartao de Debito"
+              value="Cartao de Debito, "
               onChange={this.newPaymentMethod}
             />
             Cartão de debito
             <br />
             <input
               type="checkbox"
-              value="boleto"
+              value="Boleto, "
               onChange={this.newPaymentMethod}
             />
             Boleto
             <br />
             <input
               type="checkbox"
-              value="paypal"
+              value="Paypal, "
               onChange={this.newPaymentMethod}
             />
             Paypal
