@@ -39,12 +39,34 @@ export const CardJob = styled.div`
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  border-radius: 20px;
+  background: #a873db;
+  color: white;
+  border: none;
 `;
 export const DivCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
 `;
+
+export const InputDeBusca = styled.input`
+    color: white;
+    border-radius: 10px;
+    border: none;
+   
+`
+
+export const BotaoCard =styled.button`
+border-radius: 10px;
+border: none;
+background: #8000807a;
+color: white;
+
+&:hover{
+  cursor: pointer;
+}
+`
 
 export default class PageCards extends Component {
   state = {
@@ -127,7 +149,7 @@ export default class PageCards extends Component {
             </p>
             <p>{job.dueDate.split("T")[0]}</p>
             
-            <button onClick={() => this.props.goToDetailPage(job.id)}>Ver detalhes</button>
+            <BotaoCard onClick={() => this.props.goToDetailPage(job.id)}>Ver detalhes</BotaoCard>
            
           </CardJob>
         );
@@ -137,19 +159,19 @@ export default class PageCards extends Component {
       <MainCard>
         <div>
           <Filter>
-            <input
+            < InputDeBusca
               type="number"
               placeholder="Preço Mínimo"
               value={this.state.minPrice}
               onChange={this.updateMinPrice}
             />
-            <input
+            < InputDeBusca
               type="number"
               placeholder="Preço Máximo"
               value={this.state.maxPrice}
               onChange={this.updateMaxPrice}
             />
-            <input
+            < InputDeBusca
               placeholder="Busca por Título ou descrição"
               value={this.state.query}
               onChange={this.updateQuery}

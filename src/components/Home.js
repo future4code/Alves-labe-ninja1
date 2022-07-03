@@ -27,11 +27,9 @@ export default class Home extends Component {
           <DivTexto>
             <Title>Quem somos nós?</Title>
             <Description>
-              O que é Lorem Ipsum? Lorem Ipsum é simplesmente uma simulação de
-              texto da indústria tipográfica e de impressos, e vem sendo
-              utilizado desde o século XVI.Lorem Ipsum é simplesmente uma simulação de
-              texto da indústria tipográfica e de impressos, e vem sendo
-              utilizado desde o século XVI.
+            LabeNinjas é uma plataforma de contratação de serviços no Brasil. 
+            Conectamos Profissionais de todo o Brasil com pessoas solicitando serviço,
+            atendendo com qualidade, facilidade e rapidez todos os tipos de necessidade.
             </Description>
           </DivTexto>
         </SecondContainer>
