@@ -1,14 +1,80 @@
 import axios from "axios";
 import React from "react";
 import styled from "styled-components";
+import Worker from "../pageCadastro/worker.png"
 
+const CadastroImage = styled.img`
+  height: 72vh;
+  margin: auto;
+`
+const ContainerCadastro = styled.div`
+  display: grid;
+  width: 100%;
+  background-color:#cccccc;
+  height:72vh;
+  grid-template-columns: 1fr 1fr;
+`
+const TitleCadastro = styled.div`
+  font-size: 4vh;
+`
 const FormContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 40vw;
-  margin: 10px;
-  justify-content: center;
+  align-items: center;
 `;
+
+const Form = styled.div`
+  font-size: 2vh;
+  color: white;
+  height: 82%;
+  background-color: #a6a6a6;
+  width: 70%;
+  max-width: 60%;
+  padding: 1vw;
+
+`;
+
+const Campo = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8em;
+`
+
+const ButtonCadastro = styled.button`
+  background-color: #872fdd;
+  color: #D9D9D9;
+  text-transform: uppercase;
+  font-size: 2vh;
+  font-weight: bold;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+
+  :hover {
+    opacity: 1;
+  }
+`
+
+const Input = styled.input`
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+`
+
+const InputDescricao = styled.textarea`
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 15vh;
+`
+
+const PaymentMethod = styled.span`
+  padding-right: 1.2vw;
+`
+
 
 export default class PageCadastro extends React.Component {
   state = {
@@ -79,70 +145,81 @@ export default class PageCadastro extends React.Component {
 
   render() {
     return (
-      <div>
+      <ContainerCadastro>
+        <CadastroImage src={Worker}></CadastroImage>
         <FormContainer>
-          <h1>Seja um ninja</h1>
-          <input
-            placeholder="Titulo"
-            value={this.state.title}
-            onChange={this.newTitle}
-          />
-          <input
-            placeholder="Descrição"
-            value={this.state.description}
-            onChange={this.newDescription}
-          />
-          <input
-            placeholder="Preço"
-            value={this.state.price}
-            onChange={this.newPrice}
-          />
+          <Form>
+            <TitleCadastro>Seja um ninja</TitleCadastro>
+            <br/>
+            <Campo>
+              TÍTULO
+              <Input
+                placeholder="Titulo"
+                value={this.state.title}
+                onChange={this.newTitle}
+              />
+            </Campo>
+            <Campo>
+              DESCRIÇÃO
+              <InputDescricao
+                placeholder="Descrição"
+                value={this.state.description}
+                onChange={this.newDescription}
+              />
+            </Campo>
+            <Campo>
+              PREÇO
+              <Input
+                placeholder="Preço"
+                value={this.state.price}
+                onChange={this.newPrice}
+              />
+            </Campo>
+            <Campo>
+              <div>
+                <div>MÉTODOS DE PAGAMENTO</div>
+                <Input
+                  type="checkbox" 
+                  value="pix" 
+                  onChange={this.newPaymentMethod} />
+                <PaymentMethod>Pix</PaymentMethod>
+                
+                <Input
+                  type="checkbox"
+                  value="cartao de Credito"
+                  onChange={this.newPaymentMethod}
+                />
+                <PaymentMethod>Cartão de crédito</PaymentMethod>
+                
+                <Input
+                  type="checkbox"
+                  value="cartao de Debito"
+                  onChange={this.newPaymentMethod}
+                />
+                <PaymentMethod>Cartão de debito</PaymentMethod>
+              
+                <Input
+                  type="checkbox"
+                  value="boleto"
+                  onChange={this.newPaymentMethod}
+                />
+                <PaymentMethod>Boleto</PaymentMethod>
+                
+              </div>
+            </Campo>
 
-          <div>
-            <div>Métodos de Pagamento</div>
-            <input type="checkbox" value="pix" onChange={this.newPaymentMethod} />
-            Pix
-            <br />
-            <input
-              type="checkbox"
-              value="cartao de Credito"
-              onChange={this.newPaymentMethod}
-            />
-            Cartão de crédito
-            <br />
-            <input
-              type="checkbox"
-              value="cartao de Debito"
-              onChange={this.newPaymentMethod}
-            />
-            Cartão de debito
-            <br />
-            <input
-              type="checkbox"
-              value="boleto"
-              onChange={this.newPaymentMethod}
-            />
-            Boleto
-            <br />
-            <input
-              type="checkbox"
-              value="paypal"
-              onChange={this.newPaymentMethod}
-            />
-            Paypal
-            <br />
-          </div>
-
-          <input
-            placeholder="Prazo do Serviço"
-            type="date"
-            value={this.state.dueDate}
-            onChange={this.NewDueDate}
-          />
-          <button onClick={this.createJob}>Cadastrar Serviço</button>
-          
-        </FormContainer>
-      </div>
+            <Campo>
+              <Input
+                placeholder="Prazo do Serviço"
+                type="date"
+                value={this.state.dueDate}
+                onChange={this.NewDueDate}
+              />
+            </Campo>
+            <ButtonCadastro onClick={this.createJob}>Cadastrar Serviço</ButtonCadastro>
+          </Form>
+        </FormContainer> 
+      </ContainerCadastro>
     );
   }
 }
