@@ -18,7 +18,7 @@ export const Body = styled.body`
 
 //Estilos Header
 export const Header = styled.header`
-  height: 11vh;
+  height: 13vh;
   padding: 0 9vw;
   background-color: #a873db;
   display: flex;
@@ -35,7 +35,12 @@ export const Header = styled.header`
 `;
 
 export const ButtonsHeader = styled.div`
-  margin-right: 3vw;
+  display: flex;
+  filter: drop-shadow(1px 1px 1px #6F7378);
+  gap: 1.5vw;
+
+  margin-right: 14vw;
+
 `
 
 export const Button = styled.button`
@@ -45,10 +50,28 @@ export const Button = styled.button`
   height: 3vh;
 `;
 
+export const HomeButton = styled.img`
+  height: 5vh;
+
+  :hover{
+    cursor: pointer;
+    transform: scale(1.2)
+  }
+`
+
+export const CartButton = styled.img`
+  height: 5vh;
+
+  :hover{
+    cursor: pointer;
+    transform: scale(1.2)
+  }
+`
+
 export const Logo = styled.img`
   display: inline-block;
   margin-left: 2vw;
-  height: 12vh;
+  height: 13vh;
 `
 
 export const PageName = styled.div`
@@ -58,7 +81,13 @@ export const PageName = styled.div`
   color: #D9D9D9;
   line-height: 90%;
   font-size: 5.2vh;
-  font-family: 'GloryMathilda'
+  font-family: 'GloryMathilda';
+  filter: drop-shadow(1px 1px 1px #6F7378);
+
+  :hover{
+    cursor: pointer;
+    transform: scale(1.08)
+  }
 `
 
 

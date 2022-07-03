@@ -1,16 +1,19 @@
 import React, { Component } from "react";
-import { Body, Header, Footer, Button, RedesSociais } from "./components/styled";
+import { Body, Header, ButtonsHeader, Footer, HomeButton, CartButton, RedesSociais, Logo, PageName, Contato, Gif, Icons} from "./components/styled";
 import Home from "./components/Home";
 import PageCadastro from "./pages/pageCadastro/PageCadastro";
 import PageCards from "./components/PageCards";
 import PageCarrinho from "./pages/pagecarrinho/PageCarrinho";
 import PageDetail from "./components/PageDetail";
-import facebook from "./components/img/facebook.jpg"
-import instagran from "./components/img/instagran.jpg"
-import twitter from "./components/img/twitter.jpg"
-import whatsapp from "./components/img/whatsapp.jpg"
-import Gmail from "./components/img/Gmail.png"
-
+import facebook from "./components/img/Icons/Facebook.png"
+import instagran from "./components/img/Icons/Instagram.png"
+import twitter from "./components/img/Icons/Twitter.png"
+import whatsapp from "./components/img/Icons/Whatsapp.png"
+import Gmail from "./components/img/Icons/Mail.png"
+import ninjaLogo from "./components/img/ninjaLogo.png"
+import NinjaGif from "./components/img/ninjaGif.gif"
+import HomeIcon from "./components/img/home.png"
+import CartIcon from './components/img/IconCart.png'
 
 export default class App extends Component {
   state = {
@@ -77,34 +80,37 @@ goToPageCards = () => {
     return (
       <Body>
         <Header>
-          <h2>LabeNinjas</h2>
-          <div>
-            <Button onClick={() => this.changeScreen("Home")}>Home</Button>
-            <Button onClick={() => this.changeScreen("carrinho")}>Carrinho</Button>
-          </div>
+          <PageName onClick={() => this.changeScreen("Home")} ><Logo src={ninjaLogo}></Logo>LABE<br/>NINJAS</PageName>
+          <ButtonsHeader>
+            <HomeButton onClick={() => this.changeScreen("Home")} src={HomeIcon}></HomeButton>
+            <CartButton onClick={() => this.changeScreen("carrinho")} src={CartIcon}></CartButton>
+          </ButtonsHeader>
         </Header>
         {this.visualisarTela()}
         <Footer>
-          <h5>Tel: (+55)99-99999-9999</h5>
-          <h5>Siga nos nas redes sociais</h5>
+          <Contato>CONTATO: (+55)99-99999-9999<br/>LOCALIZAÇÃO: Av. Paulista - São Paulo - SP</Contato>
+          <Gif src={NinjaGif}></Gif>
           <RedesSociais >
-                <a href="https://gmail.google.com" target="_blank">
-                    <img src={Gmail} alt="Link Gmail"/>
-                </a>
-                <a href="https://web.whatsapp.com/send?phone=00000000000" target="_blank">
-                    <img src={whatsapp} alt="Link whatsapp"/>
-                </a>
-                <a href="https://www.facebook.com/" target="_blank">
-                    <img src={facebook} alt="Link Facebook"/>
-                </a>
-                <a href="https://twitter.com/login?lang=pt" target="_blank">
-                    <img src={twitter} alt="Link Twitter"/>
-                <a href="https://www.instagram.com/" target="_blank">
-                    <img src={instagran} alt="Link Instagram"/>
-                </a>
-                </a>
-            </RedesSociais>
-          </Footer>
+              <Icons>
+                <div>SIGA-NOS NAS NOSSAS REDES SOCIAIS:</div>
+                  <a href="https://gmail.google.com" target="_blank">
+                      <img src={Gmail} alt="Link Gmail"/>
+                  </a>
+                  <a href="https://web.whatsapp.com/send?phone=00000000000" target="_blank">
+                      <img src={whatsapp} alt="Link whatsapp"/>
+                  </a>
+                  <a href="https://www.facebook.com/" target="_blank">
+                      <img src={facebook} alt="Link Facebook"/>
+                  </a>
+                  <a href="https://twitter.com/login?lang=pt" target="_blank">
+                      <img src={twitter} alt="Link Twitter"/>
+                  <a href="https://www.instagram.com/" target="_blank">
+                      <img src={instagran} alt="Link Instagram"/>
+                  </a>
+                  </a>
+              </Icons>
+          </RedesSociais>
+        </Footer>
       </Body>
 
     );
