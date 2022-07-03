@@ -1,39 +1,34 @@
-import React, { Component } from "react";
-import styled from "styled-components"
-import ItemCarrinho from "./ItensCarrinho/ItemCarrinho";
+import styled from "styled-components";
+import React from "react";
+import ItensCarrinho from "./ItensCarrinho/ItensCarrinho";
 
-
-const ConjuntoCarrinho = styled.div`
-    border: 1px solid black;
-    display:flex;
-    flex-direction: column;
-    padding: 10px;
-
+export const GrupoCarrinho = styled.div`
+ border: 1px solid black;
+ display: flex;
+ flex-direction: column;
+ padding:10px;
 `
+export default class PageCarrinho extends React.Component {
 
 
-export default class PageCarrinho extends Component {
     render() {
-        const itensDoCarrinho =
-            this.props.carrinho &&
+        const ItensDoCard = this.props.carrinho &&
             this.props.carrinho.map(item => {
-                return <ItemCarrinho
-                    key={item.id}>
-                    quantidade={item.price}
-                    nome={item.title}
-                    onClick={() => this.props.removerItemDoCarrinho(item.id)}
-                </ItemCarrinho>
+                return <ItensCarrinho 
+                    key={item.id}
+                    title={item.title}
+                    price={item.price}
 
+                />
             })
 
-        return < ConjuntoCarrinho>
-            <h2>Carrinho</h2>
+        return (<GrupoCarrinho >
+            <h2> Carrinho:</h2>
             <div>
-                {itensDoCarrinho}
+                {ItensDoCard}
             </div>
-            <p>Valor total: R$ {this.props.valorTotal},00</p>
-        </ ConjuntoCarrinho>
+            <p>valor total:{this.props.valorTotal},00</p>
+        </GrupoCarrinho>)
     }
 
 }
-

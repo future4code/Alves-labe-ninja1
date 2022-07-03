@@ -9,7 +9,7 @@ export default class PageDetail extends React.Component {
 
 
     componentDidMount() {
-        this.PegarDetalhe(this.props.id)
+        this.PegarDetalhe(this.props.clickedCharacterId)
         
     }
 

@@ -126,9 +126,9 @@ export default class PageCards extends Component {
               <b>Preço: </b>R${job.price}
             </p>
             <p>{job.dueDate.split("T")[0]}</p>
-            <button onClick={()=> this.props.adicionarProdutoNoCarrinho(job.id)}>Adicionar ao carrinho</button>
+            
             <button onClick={() => this.props.goToDetailPage(job.id)}>Ver detalhes</button>
-            <button onCanPlay={()=> this.props.changeScreen("detalhes")}>Ir para carrinho</button>
+           
           </CardJob>
         );
       });

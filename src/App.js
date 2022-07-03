@@ -17,7 +17,8 @@ export default class App extends Component {
     currentScreen: "Home",
     clickedCharacterId: "",
     carrinho: [],
-    valorTotal: 0
+    valorTotal:0
+
   };
   changeScreen = (nextScreen) => {
     this.setState({ currentScreen: nextScreen });
@@ -25,9 +26,17 @@ export default class App extends Component {
 goToDetailPage = (id) => {
   this.setState({currentScreen: "detalhes", clickedCharacterId: id})  
 }
+
+ goToCarPage = (id) => {
+  this.setState({currentScreen: "carrinho", clickedCharacterId: id})  
+}
+
+
 goToPageCards = () => {
   this.setState({currentScreen: "card", clickedCharacterId: ""})  
 }
+
+
   visualisarTela = () => {
     switch (this.state.currentScreen) {
       case "Home":
@@ -38,13 +47,15 @@ goToPageCards = () => {
         return <PageCards 
         goToDetailPage={this.goToDetailPage}
         changeScreen={this.changeScreen}
+        goToCarPage={this.goToCarPage}
+       
         />;
       case "carrinho":
         return <PageCarrinho changeScreen={this.changeScreen} 
          valorTotal={this.state.valorTotal}
          carrinho={this.state.carrinho}
-         removerItem={this.removerItemDoCarrinho}
-         
+         goToCarPage={this.goToCarPage}
+        // removerItem={this.removerItem}
         />;
       case "detalhes":
         return <PageDetail 
@@ -53,63 +64,14 @@ goToPageCards = () => {
     }
   };
 
-  // vai ser colocado no botão no card para adiciona job
-  adicionarProdutoNoCarrinho = (produto) => {
-    const produtoNoCarrinho = this.state.carrinho.filter((job) => {
-      if (job.id === produto.id) {
-        return job;
-      }else{
-        return false
-      }
-    });
+  /*removerItem = (id) => {
+    const novoCarrinho = this.state.carrinho.filter( job => {
+      return job.id !== id
+    })
+    this.setState({carrinho: novoCarrinho})
+  }
+*/
 
-    if (produtoNoCarrinho.length === 0) {
-      produto.quantidade = 1;
-      const novoCarrinho = [produto, ...this.state.carrinho];
-      this.setState({
-        carrinho: novoCarrinho,
-      });
-    } else {
-      const novoCarrinho = this.state.carrinho.map((item) => {
-        if (produto.id === item.id) {
-          return { ...item, quantidade: item.quantidade + 1 };
-        } else {
-          return item;
-        }
-      });
-
-      this.setState({
-        carrinho: novoCarrinho,
-      });
-    }
-    this.adicionarValorTotal(produto.price);
-  };
-
-   removerItemDoCarrinho = (itemParaRemover) => {
-    if (itemParaRemover.quantidade === 1) {
-      const novoCarrinho = this.state.carrinho.filter((item) => {
-        if (item.id !== itemParaRemover.id) {
-          return item;
-        }else{
-          return false
-        }
-      });
-      this.setState({
-        carrinho: novoCarrinho,
-      });
-    } else {
-      const novoCarrinho = this.state.carrinho.map((item) => {
-        if (itemParaRemover.id === item.id && item.quantidade >= 1) {
-          return { ...item, quantidade: item.quantidade - 1 };
-        } else {
-          return item;
-        }
-      });
-      this.setState({
-        carrinho: novoCarrinho,
-      });
-    }
-  };
 
   render() {
     return (
