@@ -14,6 +14,7 @@ import ninjaLogo from "./components/img/ninjaLogo.png"
 import NinjaGif from "./components/img/ninjaGif.gif"
 import HomeIcon from "./components/img/home.png"
 import CartIcon from './components/img/IconCart.png'
+import axios from "axios";
 
 export default class App extends Component {
   state = {
