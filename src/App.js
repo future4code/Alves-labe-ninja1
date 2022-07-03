@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Body, Header, ButtonsHeader, Footer, Button, RedesSociais, Logo, PageName, Contato, Gif, Icons} from "./components/styled";
+import { Body, Header, ButtonsHeader, Footer, HomeButton, CartButton, RedesSociais, Logo, PageName, Contato, Gif, Icons} from "./components/styled";
 import Home from "./components/Home";
 import PageCadastro from "./pages/pageCadastro/PageCadastro";
 import PageCards from "./components/PageCards";
@@ -12,7 +12,8 @@ import whatsapp from "./components/img/Icons/Whatsapp.png"
 import Gmail from "./components/img/Icons/Mail.png"
 import ninjaLogo from "./components/img/ninjaLogo.png"
 import NinjaGif from "./components/img/ninjaGif.gif"
-
+import HomeIcon from "./components/img/home.png"
+import CartIcon from './components/img/IconCart.png'
 
 export default class App extends Component {
   state = {
@@ -117,10 +118,10 @@ goToPageCards = () => {
     return (
       <Body>
         <Header>
-          <PageName><Logo src={ninjaLogo}></Logo>LABE<br/>NINJAS</PageName>
+          <PageName onClick={() => this.changeScreen("Home")} ><Logo src={ninjaLogo}></Logo>LABE<br/>NINJAS</PageName>
           <ButtonsHeader>
-            <Button onClick={() => this.changeScreen("Home")}>HOME</Button>
-            <Button onClick={() => this.changeScreen("carrinho")}>CARRINHO</Button>
+            <HomeButton onClick={() => this.changeScreen("Home")} src={HomeIcon}></HomeButton>
+            <CartButton onClick={() => this.changeScreen("carrinho")} src={CartIcon}></CartButton>
           </ButtonsHeader>
         </Header>
         {this.visualisarTela()}
