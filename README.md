@@ -11,7 +11,7 @@ Projeto desenvolvido para prestação de serviços com facilidade e rapidez.
 
 
 ### link surge 
-https://https://abnormal-cats.surge.sh/
+https://abnormal-cats.surge.sh/
 
 
 ### O QUE FUNCIONA?
