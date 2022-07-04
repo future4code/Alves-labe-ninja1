@@ -210,6 +210,8 @@ export const Footer = styled.footer`
   flex-shrink: 0;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0px;
+  height: 100%;
 
 `;
 

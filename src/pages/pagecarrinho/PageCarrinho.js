@@ -18,7 +18,7 @@ export default class PageCarrinho extends Component {
           <ItemCarrinho
             title={job.title}
             price={job.price}
-            removerItemCarrinho={() => this.props.removerItemDoCarrinho(job.id)}
+
           />
         );
       });

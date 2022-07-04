@@ -13,7 +13,7 @@ export default class ItemCarrinho extends Component {
       <ConjuntoItens>
         <p>{this.props.title}</p>
         <p>{this.props.price}</p>
-        <button onClick={this.props.removerItemDoCarrinho}>Remover</button>
+        <button> Remover</button>
       </ConjuntoItens>
     );
   }

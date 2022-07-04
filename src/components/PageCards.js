@@ -28,25 +28,35 @@ export const Ordenação = styled.div`
 `;
 
 export const CardJob = styled.div`
+  display: inline-block;
   border: 1px solid black;
   background-color: lightgray;
   padding: 0px 16px 16px;
   margin: 12px;
   min-width: 160px;
-  max-height: 40vh;
-  display: flex;
+  max-height: 45vh;
   flex-direction: column;
-  gap: 10px;
+  gap: 2px;
   align-items: center;
   border-radius: 20px;
   background: #a873db;
   color: white;
   border: none;
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
 `;
 export const DivCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
+  justify-content: center;
+  margin: 20px;
+  overflow: auto;
+  display: inline-block;
 `;
 
 export const InputDeBusca = styled.input`
@@ -56,11 +66,12 @@ export const InputDeBusca = styled.input`
    
 `
 
-export const BotaoCard =styled.button`
+export const BotaoCard = styled.button`
 border-radius: 10px;
 border: none;
 background: #8000807a;
 color: white;
+
 
 &:hover{
   cursor: pointer;
@@ -127,12 +138,12 @@ export default class PageCards extends Component {
               <b>Preço: </b>R${job.price.toFixed(2).replace(".", ",")}
             </p>
             <p>{job.dueDate.split("T")[0]}</p>
-            <button onClick={() => this.props.adicionarProdutoNoCarrinho(job)}>
-              Adicionar ao carrinho
-            </button>
-            <button onClick={() => this.props.goToDetailPage(job.id)}>
+            <BotaoCard onClick={() => this.props.adicionarProdutoNoCarrinho(job)}>
+              🛒
+            </BotaoCard>
+            <BotaoCard onClick={() => this.props.goToDetailPage(job.id)}>
               Ver detalhes
-            </button>
+            </BotaoCard>
           </CardJob>
         );
       });
