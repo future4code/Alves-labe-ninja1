@@ -35,9 +35,9 @@ BOTÃO CARRINHO
 Front-end: React JS, Axios e Styled-components.
 
 ## Grupo
--Raiza gomes
--Klebson Bicalho
--gilead raab
+Raiza gomes /
+Klebson Bicalho /
+gilead raab
 
 ### Aprendizados
 
