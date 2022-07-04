@@ -15,19 +15,19 @@ https://recondite-sheep.surge.sh/
 
 ### O QUE FUNCIONA?
 
-*BOTÃO CARRINHO
-*BOTÃO HOME
-*BOTÃO PARA CADASTRAR SERVIÇO
-*BOTÃO QUE VAI PARA LISTA DE JOBS
-*PAGINA DE CADASTRO DE JOBS
-*PAGINA DE LISTA DE JOBS
-*PAGINA DE DETALHES
-*ADICIONAR AO CARRINHO
+BOTÃO CARRINHO
+-BOTÃO HOME
+-BOTÃO PARA CADASTRAR SERVIÇO
+-BOTÃO QUE VAI PARA LISTA DE JOBS
+-PAGINA DE CADASTRO DE JOBS
+-PAGINA DE LISTA DE JOBS
+-PAGINA DE DETALHES
+-ADICIONAR AO CARRINHO
 
 
 ### O QUE NÃO FUNCIONA?
 
-BOTÃO DE REMOVER
+-BOTÃO DE REMOVER
 
 
 ### Ferramentas
@@ -35,9 +35,9 @@ BOTÃO DE REMOVER
 Front-end: React JS, Axios e Styled-components.
 
 ## Grupo
-Raiza gomes
-Klebson Bicalho
-gilead raab
+-Raiza gomes
+-Klebson Bicalho
+-gilead raab
 
 ### Aprendizados
 
