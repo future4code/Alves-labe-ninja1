@@ -3,7 +3,7 @@
 Projeto desenvolvido para prestação de serviços com facilidade e rapidez.
 
 
-## Screenshotdo site
+## Screenshot do site
 
 ![Sem título](https://user-images.githubusercontent.com/104535505/177064265-93c905c8-ae21-41be-bb9b-6024d19d9684.png)
 ![card](https://user-images.githubusercontent.com/104535505/177064345-28409252-8d64-4214-89ac-91fbe484ccd8.png)
